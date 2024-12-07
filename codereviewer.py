@@ -1,7 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
 
-genai.configure(api_key = "AIzaSyBeiuLDQi3ARIIafAVtb9Ia7pyf0xOIEno")
+genai.configure(api_key = "MYAPIKEY")
 
 st.markdown("""
     <style>
