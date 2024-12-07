@@ -83,42 +83,42 @@ def update_chat(role, message):
 st.markdown("""
     <h3 style="color: #FF6347;">Welcome to the AI Code Reviewer App! 🎉</h3>
     <p style="font-size: 18px; color: #fff; background-color: #4CAF50; padding: 10px; border-radius: 10px;">
-    Paste your Python code below, and let the AI review it for you!
+    Let the AI Review or Generate it for you!
     </p>
     """, unsafe_allow_html=True)
 
 input_code = st.text_area("**Enter your Python code here or  Which code you want:**", height=200)
 
-if st.button("Review Code"):
+if st.button("Result:"):
     st.markdown("""
         <div class="animated-effect">
-            🚀 Your code is being reviewed... Please wait!
+            🚀 Please Wait ...  as your Result is Generating!
         </div>
     """, unsafe_allow_html=True)
 
     if input_code.strip():
         update_chat("human", input_code)
-        review_prompt = f"Provide a brief review of the following Python code. Focus on identifying critical issues and suggest concise improvements:\n{input_code}"
+        review_prompt = f"Review the following Python code to identify any critical issues, focusing on potential bugs, inefficiencies, or areas for improvement. Then, provide concise suggestions for enhancing the code's functionality, performance, or readability:\n{input_code}"
         response = chatbot.send_message(review_prompt)
 
         update_chat("ai", response.text)
-        st.success("Code reviewed successfully! See suggestions below.")
-        st.subheader("AI Suggestions and Fixed Code:")
+        st.success("Successfully Excuted! See suggestions below.")
+        st.subheader("AI Suggestions Results:")
         st.write(response.text)
 
         st.markdown("""
             <div class="animated-effect">
-                🎉 Review complete! Check out the suggestions above.
+                🎉 Review complete! Check Suggestion above.
             </div>
         """, unsafe_allow_html=True)
 
     else:
-        st.warning("Please paste some Python code to review.")
+        st.warning("Please Enter python code to review.")
 
-if st.button("Show Review History"):
+if st.button("Show Previous History"):
     st.markdown("""
         <div class="history-message">
-            Here's the past review history. Enjoy!
+            Here's the past Search history.
         </div>
     """, unsafe_allow_html=True)
 
