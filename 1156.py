@@ -87,7 +87,7 @@ st.markdown("""
     </p>
     """, unsafe_allow_html=True)
 
-input_code = st.text_area("Paste your Python code here:", height=200)
+input_code = st.text_area("**Enter your Python code here or  Which code you want:**", height=200)
 
 if st.button("Review Code"):
     st.markdown("""
