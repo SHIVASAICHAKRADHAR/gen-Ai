@@ -69,7 +69,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("✨ Chakradhar AI Code Reviewer and Generater🤖")
+st.title("Suman AI Code Reviewer and Generater🤖")
 
 llm = genai.GenerativeModel("models/gemini-1.5-flash")
 chatbot = llm.start_chat(history=[])
